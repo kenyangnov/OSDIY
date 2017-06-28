@@ -1,1 +1,1 @@
-# 读30天自制操作系统 ~ HERE WE GO!
+# HERE WE GO!
