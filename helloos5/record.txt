@@ -1,0 +1,2 @@
+windows下Makefile无法识别copy命令，改成xcopy问题就解决了
+学到了Makefile文件的基本用法
