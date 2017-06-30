@@ -1,0 +1,4 @@
+1.无法clean问题解决，写了一个clean.bat脚本，然后修改了Makefile文件中clean的内容，现在只要make run之后，输入make clean就可以执行了。
+另外，把前面所有的clean都改写了，目前只发现这一种方法，没有找到更好的
+还有就是没有把clean设置为default，因此每次run之后要自己输入一次
+2.本节中对bootpack.c文件中绘制条纹部分进行了改写，展示了第二种写法*(p+i)。

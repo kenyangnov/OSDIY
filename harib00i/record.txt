@@ -1,0 +1,4 @@
+copy /B asmhead.bin+bootpack.hrb haribote.sys命令无法识别，通过在外部写一个bat脚本文件，再在Makefile中调用来实现。
+本次其他的更改还有：1.修改了haribote文件，将boot_info写入了该文件，如画面模式信息和键盘信息。
+2.这一部分，开始导入C语言进入这个系统了。
+3.发现一些Makefile中声明要删除的文件没有被删除，又是因为命令没有被识别

@@ -40,11 +40,11 @@ install :
 	$(IMGTOL) w a: haribote.img
 
 clean :
-	-$(DEL) ipl.bin
-	-$(DEL) ipl.lst
-	-$(DEL) haribote.sys
-	-$(DEL) haribote.lst
-
+#	-$(DEL) ipl.bin
+#	-$(DEL) ipl.lst
+#	-$(DEL) haribote.sys
+#	-$(DEL) haribote.lst
+	clean.bat
 src_only :
 	$(MAKE) clean
 	-$(DEL) haribote.img

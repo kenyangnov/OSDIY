@@ -44,12 +44,12 @@ bootpack.hrb : bootpack.bim Makefile
 	$(BIM2HRB) bootpack.bim bootpack.hrb 0
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
-	copy /B asmhead.bin+bootpack.hrb haribote.sys
+	copy.bat
 
 haribote.img : ipl10.bin haribote.sys Makefile
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
 		wbinimg src:ipl10.bin len:512 from:0 to:0 \
-		xcopy from:haribote.sys to:@: \
+		copy from:haribote.sys to:@: \
 		imgout:haribote.img
 
 # ƒRƒ}ƒ“ƒh
@@ -67,16 +67,16 @@ install :
 	$(IMGTOL) w a: haribote.img
 
 clean :
-	-$(DEL) *.bin
-	-$(DEL) *.lst
-	-$(DEL) *.gas
-	-$(DEL) *.obj
-	-$(DEL) bootpack.nas
-	-$(DEL) bootpack.map
-	-$(DEL) bootpack.bim
-	-$(DEL) bootpack.hrb
-	-$(DEL) haribote.sys
-
+#	-$(DEL) *.bin
+#	-$(DEL) *.lst
+#	-$(DEL) *.gas
+#	-$(DEL) *.obj
+#	-$(DEL) bootpack.nas
+#	-$(DEL) bootpack.map
+#	-$(DEL) bootpack.bim
+#	-$(DEL) bootpack.hrb
+#	-$(DEL) haribote.sys
+	clean.bat
 src_only :
 	$(MAKE) clean
 	-$(DEL) haribote.img
