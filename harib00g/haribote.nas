@@ -1,9 +1,9 @@
 ; haribote-os
 ; TAB=4
 
-		ORG		0xc200			; このプログラムがどこに読み込まれるのか
+		ORG		0xc200			; ﾖｸﾃｰﾔﾘｵﾘﾖｷ
 
-		MOV		AL,0x13			; VGAグラフィックス、320x200x8bitカラー
+		MOV		AL,0x13			; ﾉ靹ﾃVGAﾏﾔｿｨﾄ｣ﾊｽ｣ｬ320*200*8ﾎｻｲﾊﾉｫ
 		MOV		AH,0x00
 		INT		0x10
 fin:

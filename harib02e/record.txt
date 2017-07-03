@@ -1,0 +1,6 @@
+本节的逻辑是这样的：
+将字符文件hankaku.txt通过makefont.exe转换成字节文件hankaku.bin
+再将hankaku.bin通过bin2obj.exe转换成目标文件。
+
+另外，如果c语言中使用这种字体数据，要写成：
+	extern char hankaku[4096],因为在源程序以外准备的数据都要加上extern。

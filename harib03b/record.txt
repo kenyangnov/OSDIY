@@ -1,0 +1,12 @@
+为了精简Makefile代码，提取出一般规则，如下：
+%.gas : %.c Makefile
+	$(CC1) -o $*.gas $*.c
+
+%.nas : %.gas Makefile
+	$(GAS2NASK) $*.gas $*.nas
+
+%.obj : %.nas Makefile
+	$(NASK) $*.nas $*.obj $*.lst
+
+make.exe会首先寻找普通文件的生成规则，如果没有找到，就尝试一般规则。即普通生成规则的优先级更高
+另外，有一点不明白的是，为什么没有清除生成的中间文件.nas，可是却没有看到这个文件

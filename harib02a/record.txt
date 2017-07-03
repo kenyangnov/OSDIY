@@ -1,0 +1,7 @@
+1.本节没有做什么大的改动，主要就是：将一些参数从直接赋值改成了获取内存中asmhead.nas文件的内容
+2.对于以下两种写法应该熟练掌握：
+写法一：short *binfo_scrnx;
+	binfo_scrnx=(short *) 0x0ff4;
+	int xsize = *binfo_scrnx
+写法二：int xsize = *((short *) 0x0ff4); 
+	

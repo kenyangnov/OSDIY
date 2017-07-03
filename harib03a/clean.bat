@@ -1,0 +1,11 @@
+del *.bin
+del *.lst
+del *.gas
+del *.obj
+del bootpack.nas
+del graphic.nas
+del dsctbl.nas
+del bootpack.map
+del bootpack.bim
+del bootpack.hrb
+del haribote.sys

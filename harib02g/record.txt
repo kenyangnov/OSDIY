@@ -1,0 +1,7 @@
+1.本节重点，完成了显示变量的值工作，通过调用C库里面的sprint(...)函数来实现，这为后期的DEBUG提供了帮助
+2.这个函数之所以可以使用，而printf(...)不能使用，是因为sprinf函数不使用操作系统的功能，而是单纯的输出内容作为字符串写入内存。因此这个函数可以应用于所有的操作系统，包括这里我们写的系统。
+3.幸运的是这个函数也可以像printf函数一样格式化输出。
+4.注意源程序开头写上#include <iostream>
+5.通过查看源码，原来字体阴影是这样实现的：
+	putfonts8_asc(binfo->vram, binfo->scrnx, 31, 31, COL8_000000, "Haribote OS.");
+	putfonts8_asc(binfo->vram, binfo->scrnx, 30, 30, COL8_FFFFFF, "Haribote OS.");

@@ -1,0 +1,5 @@
+将bootpack.c拆分成三个文件：
+	graphic.c    关于描画的处理
+	dsctbl.c    关于GDT和IDT的处理
+	bootpack.c    其他处理
+方便之后的代码管理

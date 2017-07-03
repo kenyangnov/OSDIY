@@ -86,8 +86,8 @@ void init_palette(void)
 void set_palette(int start, int end, unsigned char *rgb)
 {
 	int i, eflags;
-	eflags = io_load_eflags();	/* Š„‚è‚İ‹–‰Âƒtƒ‰ƒO‚Ì’l‚ğ‹L˜^‚·‚é */
-	io_cli(); 					/* ‹–‰Âƒtƒ‰ƒO‚ğ0‚É‚µ‚ÄŠ„‚è‚İ‹Ö~‚É‚·‚é */
+	eflags = io_load_eflags();	/* ??’†’f?‰Â?u“I? */
+	io_cli(); 					/* ‹Ö~’†’f */
 	io_out8(0x03c8, start);
 	for (i = start; i <= end; i++) {
 		io_out8(0x03c9, rgb[0] / 4);
@@ -95,7 +95,7 @@ void set_palette(int start, int end, unsigned char *rgb)
 		io_out8(0x03c9, rgb[2] / 4);
 		rgb += 3;
 	}
-	io_store_eflags(eflags);	/* Š„‚è‚İ‹–‰Âƒtƒ‰ƒO‚ğŒ³‚É–ß‚· */
+	io_store_eflags(eflags);	/* ‰ø??‰Â?u“I? */
 	return;
 }
 
