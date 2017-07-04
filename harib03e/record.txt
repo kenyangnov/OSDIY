@@ -1,0 +1,15 @@
+编写了INT 0x2c、INT 0x21和INT 0x27的中断处理程序
+INT 0x2c：处理鼠标中断
+INT 0x21：处理键盘中断
+INT 0x27：处理随着PIC初始化产生的一次IRQ7中断
+
+
+但因为中断处理完成之后还不能执行“return；”，而必须执行IRETD指令，因此在naskfunc.nas中写了_asm_inthandler21函数，这个函数中调用原本的中断处理函数，最后再执行IRETD。
+
+栈是数据缓冲区的一种实现方式。这在中断中可以用于保存中断前的信息
+
+set_gatedesc(idt + 0x21, (int) asm_inthandler21, 2 * 8, AR_INTGATE32);这一句中(int) asm_inthandler21是用来获得函数的地址
+
+最后，我们要将_asm_inthandler21函数注册到IDT中，这样产生中断时才能转去执行相应的中断服务程序：
+
+CPU的中断信号只有一根，不像PIC有8根，执行STI指令后，中断许可位IF变为1，接受来自外部的中断请求
