@@ -1,0 +1,7 @@
+这一节，我们将sheet_updown函数优化了一下，因为参数列表里有ctl用起来不方便
+
+所以我们将ctl的指针放在了SHEET结构体里，这样就可以在函数中通过参数sht获得ctl了。
+
+这次重写之后，sheet_refresh函数、sheet_slide函数、sheet_free函数都要做相应的修改更新。
+
+并且bootpack.c的HariMain函数中，也要把相应的shtctl删掉，进行修改。
