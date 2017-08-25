@@ -1,0 +1,7 @@
+为了确认task_b有无运行，我们让它不断计数，然后在桌面上显示出来。
+但是我们遇到了一个问题，就是图层sht_back是在HariMain中定义的，task_b_main可不认识。
+所以我们怎么将这个变量的值从任务A传递到任务B呢？我们的做法是找一个内存地址将sht_back存进去，然后task_b_main再从那个地址中读出来：
+HariMain中（任务A）：
+*((int *) 0x0fec) = (int) sht_back;
+task_b_main中（任务B）：
+sht_back = (struct SHEET *) *((int *) 0x0fec);
