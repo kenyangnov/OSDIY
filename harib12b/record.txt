@@ -3,4 +3,6 @@
 _taskswitch3: ;void taskswitch3(void);
     JMP 3*8:0
     RET
-我们在task_b_main中调用它，实现跳转回task_a_main。
+我们在task_b_main中调用它，实现跳转回HariMain。
+
+有点不解的地方是HariMain中并未指定任务的地址，任务B是如何跳转回来的？

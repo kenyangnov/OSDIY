@@ -1,0 +1,15 @@
+实现任务优先级功能，最开始的任务设定优先级为标准值2（任务切换间隔固定为0.02秒），另外优先级为0则表示不改变当前已经设定的优先级，这样设计主要是为了在唤醒任务休眠时候使用。另外作者的代码有一处精妙：
+void task_run(struct TASK *task, int priority)
+{
+	if (priority > 0) {
+		task->priority = priority;
+	}
+	if (task->flags != 2) {
+		task->flags = 2; /* 動作中マーク */
+		taskctl->tasks[taskctl->running] = task;
+		taskctl->running++;
+	}
+	return;
+}
+这里第二个if语句直接用else不就可以了么？错！因为当priority>0时，也要往下走，去执行第二个判断语句。
+这里的优先级是通过设定时间间隔来实现了，优先级高给它执行的时间长，优先级低则短。

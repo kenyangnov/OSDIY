@@ -1,2 +1,2 @@
-首先我们将切换任务的函数抽象成一个统一的函数:void farjmp(int eip, int cs)
+首先我们将切换任务的函数抽象成一个统一的函数:void farjmp(int eip, int cs)，那么taskswitch_k()转换为farjump(0,k*8)；
 然后我们在任务A、B分别声明变量timer_ts（ts表示task switch，即任务切换计时器），记录设定的任务切换的时间间隔。
